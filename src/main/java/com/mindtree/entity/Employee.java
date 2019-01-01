@@ -22,7 +22,7 @@ public class Employee {
 	private String userName;
 	private String password;
 	//@Temporal(TemporalType.DATE)
-	private Date doj; 
+	private String doj; 
 	private String email;
 	private String role;
 	//private int projectId;
