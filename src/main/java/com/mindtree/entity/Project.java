@@ -15,8 +15,8 @@ public class Project {
 	private String projectDescription;
 	private String estimatedHrs;
 	
-	@OneToMany
-	private List<Employee> employee;
+	/*@OneToMany
+	private List<Employee> employee;*/
 	
 	public Project() {
 		super();
