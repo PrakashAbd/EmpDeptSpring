@@ -42,10 +42,9 @@ public class Employee {
 		this.email = "";
 		this.password="";
 		this.role = "";
-		this.project = null;
 	}
 
-	public Employee(String userId, String userName, Date doj, String email,String password, String role,Project project) {
+	public Employee(String userId, String userName, Date doj, String email,String password, String role) {
 		super();
 		this.userId = userId;
 		this.userName = userName;
@@ -53,7 +52,6 @@ public class Employee {
 		this.email = email;
 		this.password=password;
 		this.role = role;
-		this.project = project;
 	}	
 	
 	public void setEmployee()
@@ -64,7 +62,6 @@ public class Employee {
 		this.email = "";
 		this.password="";
 		this.role = "";
-		this.project = null;
 	}
 	
 	public void setEmployee(Employee employee)
@@ -75,7 +72,6 @@ public class Employee {
 		this.email = employee.getEmail();
 		this.password=employee.getPassword();
 		this.role = employee.getRole();
-		this.project = employee.getProject();
 	}
 	
 	public String getUserId() {
@@ -126,14 +122,6 @@ public class Employee {
 		this.password = password;
 	}
 
-	public Project getProject() {
-		return project;
-	}
-
-	public void setProject(Project project) {
-		this.project = project;
-	}
-
 	/*public int getProjectId() {
 		return projectId;
 	}
@@ -145,6 +133,6 @@ public class Employee {
 	@Override
 	public String toString() {
 		return "Employee [userId=" + userId + ", userName=" + userName + ", doj=" + doj + ", email=" + email + ", role="
-				+ role + ", project=" + project + "]";
+				+ role  + "]";
 	}
 }
