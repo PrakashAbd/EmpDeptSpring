@@ -21,7 +21,7 @@ public class Employee {
 	private String userId;
 	private String userName;
 	private String password;
-	@Temporal(TemporalType.DATE)
+	//@Temporal(TemporalType.DATE)
 	private Date doj; 
 	private String email;
 	private String role;
@@ -44,7 +44,7 @@ public class Employee {
 		this.role = "";
 	}
 
-	public Employee(String userId, String userName, Date doj, String email,String password, String role) {
+	public Employee(String userId, String userName, String doj, String email,String password, String role) {
 		super();
 		this.userId = userId;
 		this.userName = userName;
@@ -90,11 +90,11 @@ public class Employee {
 		this.userName = userName;
 	}
 
-	public Date getDoj() {
+	public String getDoj() {
 		return doj;
 	}
 
-	public void setDoj(Date doj) {
+	public void setDoj(String doj) {
 		this.doj = doj;
 	}
 
