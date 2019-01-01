@@ -27,8 +27,8 @@ public class Employee {
 	private String role;
 	//private int projectId;
 	
-	@ManyToOne
-	private Project project;
+	/*@ManyToOne
+	private Project project;*/
 	
 	/*@OneToOne
 	@JoinColumn(referencedColumnName="userId")
