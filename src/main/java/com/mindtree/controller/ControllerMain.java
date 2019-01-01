@@ -109,6 +109,9 @@ public class ControllerMain {
 	public ModelAndView createNewEmployee(@ModelAttribute Employee emp)
 	{
 		//System.out.println(emp.getUserName());
+		SimpleDateFormat ft = new SimpleDateFormat ("dd-mm-yyyy");
+		Date d1=emp.getDoj();
+		emp.setDoj(ft.format(d1));
 		System.out.println("Creating new Employee..."+emp.getEmail());
 		employeeService.addUser(emp, con);
 		log.setPassword(emp.getPassword());
