@@ -37,10 +37,10 @@ public class ControllerMain {
 		
 		System.out.println("hi1");
 		String message="HelloWorld";
-		log.setUserId("Admin");
+		/*log.setUserId("Admin");
 		log.setPassword("admin");
 		System.out.println("Entered into login ...."+log.getUserId()+log.getPassword());
-		loginService.createUser(log, con);
+		loginService.createUser(log, con);*/
 		return new ModelAndView("Login","message",message);
 	}
 	
