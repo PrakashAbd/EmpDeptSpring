@@ -21,7 +21,7 @@ node {
 			//}
     }
     
-   	/*stage("Quality Gate") {
+   	stage("Quality Gate") {
 			timeout(time: 1, unit: 'HOURS') { 
 				def qg = waitForQualityGate() 
 				if (qg.status != 'OK') {
@@ -31,7 +31,7 @@ node {
 					currentBuild.status='FAILURE'
 				}
 			}
-		}*/
+		}
 	
         stage('Build') {
            sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
