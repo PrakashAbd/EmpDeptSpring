@@ -9,11 +9,14 @@ node {
        }
   
 	stage('SonarQube analysis') {
+	
+		withSonarQubeEnv('Sonarqube') {
 		sh '''mvn sonar:sonar \
   		-Dsonar.projectKey=JP \
   		-Dsonar.organization=jegapriya-github \
   		-Dsonar.host.url=https://sonarcloud.io \
   		-Dsonar.login=f0dee7d1ed729d7db440239615e8d31e90f0c6ae'''
+		}
 		/*withSonarQubeEnv('Sonarqube') {
 				sh '''mvn clean package sonar:sonar \
   					-Dsonar.host.url=http://13.90.59.213 \
