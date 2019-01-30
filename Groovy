@@ -40,7 +40,7 @@ node {
            sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
        }   
 		
-    stage('Artifactory upload') {
+    /*stage('Artifactory upload') {
 	      def uploadSpec = """{ "files": [ {
 		   "pattern": "/var/lib/jenkins/workspace/NewForDiscuss/target/*.war", "target": "SnapshotNew" 
 	   } ] }""" 
@@ -61,7 +61,7 @@ node {
 	//sh "docker cp /var/lib/jenkins/workspace/NewForDiscuss/target/*.war jegapriya2:/usr/local/tomcat/webapps/"
    	sh "scp /var/lib/jenkins/workspace/NewForDiscuss/target/*.war Jegapriya@jegapriya.eastus.cloudapp.azure.com:/opt/tomcat/apache-tomcat-8.5.37/webapps"
 	
-   }
+   }*/
 
    }
    catch(err)
