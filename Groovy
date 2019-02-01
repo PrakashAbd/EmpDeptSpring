@@ -10,18 +10,28 @@ node {
   
 	stage('SonarQube analysis') {
 	
-		withSonarQubeEnv('Sonarqube') {
+		/*withSonarQubeEnv('Sonarqube') {
 		sh '''mvn sonar:sonar \
   		-Dsonar.projectKey=JP \
   		-Dsonar.organization=jegapriya-github \
   		-Dsonar.host.url=https://sonarcloud.io \
   		-Dsonar.login=f0dee7d1ed729d7db440239615e8d31e90f0c6ae'''
-		}
+		}*/
 		/*withSonarQubeEnv('Sonarqube') {
 				sh '''mvn clean package sonar:sonar \
   					-Dsonar.host.url=http://13.90.59.213 \
   					-Dsonar.login=31954f225bd61830fc95c60fb6ecdb37c97e73c6'''
 			}*/
+			
+		withSonarQubeEnv('Sonarqube') {
+		
+				sh '''mvn sonar:sonar \
+  					-Dsonar.host.url=http://cwmgx72880dns.westus.cloudapp.azure.com \
+  					-Dsonar.login=8a0977b7bf704bab2e7b21748700a420e81e23cc'''
+				/*sh '''mvn clean package sonar:sonar \
+  					-Dsonar.host.url=http://13.90.59.213 \
+  					-Dsonar.login=31954f225bd61830fc95c60fb6ecdb37c97e73c6'''*/
+			}
     }
     
    	stage("Quality Gate") {
