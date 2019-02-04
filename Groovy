@@ -25,7 +25,7 @@ node {
 			
 		withSonarQubeEnv('Sonarqube') {
 		
-				sh '''mvn sonar:sonar \
+				sh '''mvn clean package sonar:sonar \
   					-Dsonar.host.url=http://cwmgx72880dns.westus.cloudapp.azure.com \
   					-Dsonar.login=8a0977b7bf704bab2e7b21748700a420e81e23cc'''
 				/*sh '''mvn clean package sonar:sonar \
