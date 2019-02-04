@@ -7,7 +7,9 @@
 <input type="submit" value = "login"/>
 
 <a href="hello.html">Click</a>
-This one is under the getenv("Environ")
+<? php
+      This one is under the getenv("Environ")
+?>
 </form>
 </body>
 </html>
