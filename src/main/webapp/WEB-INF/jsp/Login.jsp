@@ -26,7 +26,7 @@
 	</form>
 	<table>
 		<tr>
-		<td><% System.getenv("Environ"); %></td>
+		<td><% out.print(System.getenv("Environ")); %></td>
 		</tr>
 	</table>
 </body>
