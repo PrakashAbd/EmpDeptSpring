@@ -1,0 +1,36 @@
+version: 0.0
+os: linux
+files:
+   - source: /
+     destination: /var/www/html
+permissions:
+   - object: /var/www/html
+     pattern: "**"
+     owner: apache
+     group: apache
+     mode: 755
+     type:
+       - file
+hooks:
+   BeforeInstall:
+    - location: scripts/installapache.sh
+      runas: root
+    - location: scripts/startapache.sh
+      runas: root
+   AfterInstall:
+    - location: scripts/restartapache.sh
+      runas: root
+      
+env:
+  variables:
+    SONAR_LOGIN: "8a0977b7bf704bab2e7b21748700a420e81e23cc"
+    SONAR_HOST: "http://cwmgx72880dns.westus.cloudapp.azure.com"
+    #You should use parameter-store here instead
+
+phases:
+  build:
+    commands:
+      - mvn test
+  post_build:
+    commands:
+      - mvn sonar:sonar -Dsonar.login=$SONAR_LOGIN -Dsonar.host.url=$SONAR_HOST
