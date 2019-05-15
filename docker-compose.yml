@@ -1,0 +1,24 @@
+tomcat:
+  image: tomcat:8
+  ports:
+    - "8080:8080"
+  container_name: App
+  volumes:
+          #- /opt/tomcat/apache-tomcat-8.5.41/conf/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml
+    - /home/minduser/EmpDeptSpring/target/EmpDeptSpring.war:/usr/local/tomcat/webapps/ROOT.war
+    - /home/minduser/EmpDeptSpring/target/EmpDeptSpring:/usr/local/tomcat/webapps/ROOT
+  links:
+    - mysql
+
+mysql:
+  image: mysql:latest
+  environment:
+    MYSQL_ROOT_PASSWORD: root
+    MYSQL_DATABASE: Emp
+    MYSQL_USERNAME: root
+    MYSQL_PASSWORD: root
+  ports:
+    - 3306:3306
+  container_name: myDB
+  #volumes:
+  #- /var/lib/mysql:/var/lib/mysql
